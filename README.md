@@ -1,3 +1,6 @@
+```ATTENTION: This project is **OBSOLETE** (NO longer works) as far as everything used (in *this* case) has been shut/closed/deleted now that I've graduated. Feel free to use it as a guide to get to where you wanna be. Or whatever.
+```
+
 #Linux Server Configuration
 ===========================
 Udacity Final Project
@@ -11,7 +14,7 @@ Public IP address: 34.213.124.212
 SSH port: 2200
 Username:*grader*
 
-###The Project
+##The Project
 Using Amazon Lightsail (a new Ubuntu Linux server), secure and set up a Linux server. Ssh inot the server, update all current installed packages, change the port to 2200.
 
 Configure the ufw to allow connections ONLY for ssh `-p 2200` (and open the port firewall first on Lightsail to avoid locking yourself out), http `-p 80`, and ntp `-p123`.
@@ -26,7 +29,7 @@ Finally, deploy your application via your server using the IP
 address in a browser (without your .git director being publicly accessible in the broswer).
 
 ##The Project Step by Painful Step
-###Get and secure your server
+##Get and secure your server
 After setting up your AWS Lightsail, adding your ECDSA key to .ssh in *known_hosts*, login to terminal as root then:
 
 Login to root (Unbuntu) using:
@@ -61,7 +64,7 @@ Give *grader* Sudo Permission
 Create a new file in *sudoers* directory
 `sudo usermod -a -G sudo grader`
 
-####FYI
+##FYI
 >When you want to check *sudo privileges*
 `sudo -l`
 If you forget to use *sudo*
@@ -73,7 +76,7 @@ Defaults       insult
 ................
 `sudo visudo`
 
->####**See Also: [How to add and delete users on Ubuntu VPS](https://www.digitalocean.com/community/tutorials/how-to-add-and-delete-users-on-an-ubuntu-14-04-vps)
+>##**See Also: [How to add and delete users on Ubuntu VPS](https://www.digitalocean.com/community/tutorials/how-to-add-and-delete-users-on-an-ubuntu-14-04-vps)
 
 Update Package Source List
 `sudo apt-get update`
@@ -93,7 +96,7 @@ Remove Unnecessary Packages
 When asked about file path and passphrase:
 `yes` *or* press enter to */Users/teraisa/.ssh/id_rsa*; `no` to passphrase (the command line will print your saved key's path and it's fingerprint)
 
->####**See Also:
+>##**See Also:
 [Generate a New SSH Key,](https://www.ssh.com/ssh/keygen/) 
 [SSH Keys,](https://wiki.archlinux.org/index.php/SSH_keys) 
 [How to Configure SSH Key-Based Authentication,](https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-freebsd-server) 
@@ -105,7 +108,7 @@ Copy Key and Intall it as an Authorized User
 `ssh-copy-id ubuntu@34.213.124.212`
 `cat ~/.ssh/id_rsa.pub ssh-rsa`
 
->####**See Also:
+>##**See Also:
 [SSH Copy ID](https://www.ssh.com/ssh/copy-id)
 
 **Logged in as *Ubuntu***
@@ -123,7 +126,7 @@ Restrict permissions
 `chmod 700 ~/.ssh`
 `chmod 600 ~/.ssh/authorized_keys`
 
->####**See Also: 
+>##**See Also: 
 [Connect to a Server by Using SSH on Linux or Mac OS X](https://support.rackspace.com/how-to/connecting-to-a-server-using-ssh-on-linux-or-mac-os/)
 [Initial Server Setup with Ubuntu](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-16-04)
 
@@ -191,7 +194,7 @@ and
 Using a new terminal, verify you can login on port 2200
 `ssh grader@34.213.124.212 -p 2200`
 
->####**See Also:
+>##**See Also:
 [Understanding public network ports and firewall settings in Amazon Lightsail](https://lightsail.aws.amazon.com/ls/docs/overview/article/understanding-firewall-and-port-mappings-in-amazon-lightsail)
 
 Change Timezone to UTC
@@ -216,7 +219,7 @@ Verify Module wsgi is enabled
 Start Apache2
 `sudo service apache2 start`
 
->####FYI
+>##FYI
 Apache's error logs
 `/var/log/apache2/error.log`
 Apache watches the end of your file
@@ -244,7 +247,7 @@ Cd into newly created directory
 Clone Proj4
 `git clone https://github.com/Teraisa/Proj4.git catalog`
 Shows the cloning process as it happens
->####FYI
+>##FYI
 If you do need to make changes to Proj4, edit on Github (my preference at this point in this particular project), then 
 `git pull (catalog file name)`
 
@@ -264,7 +267,7 @@ sys.path.insert(0, "/var/www/catalog")
 from catalog import app as application
 application.secret_key = 'There_is_no_way_out'
 ```
->####**See Also:
+>##**See Also:
 [How To Install Linux, Apache, MySQL, PHP -LAMP- stack on Ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu-14-04)
 [Start, Restart, and Stop Apache web server on Linux](http://www.learn4master.com/programming-language/shell/start-restart-and-stop-apache-on-linux)
 [André Sabino and Posts Tagged ‘mod_wsgi’](http://andresabino.com/tag/mod_wsgi/)
@@ -324,7 +327,7 @@ with
     CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
 ```
->####**See Also:
+>##**See Also:
 [Configuring a webserver](https://symfony.com/doc/current/setup/web_server_configuration.html)
 [How to Serve Flask Applications](https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-uwsgi-and-nginx-on-ubuntu-16-04)
 
@@ -375,7 +378,7 @@ Permissions
 and
 `exit`
 
->####**See Also:
+>##**See Also:
 [How to Secure PostgreSQL on Ubuntu](https://www.digitalocean.com/community/tutorials/how-to-secure-postgresql-on-an-ubuntu-vps)
 [How to Install and Use PostgreSQL](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-14-04)
 
@@ -405,7 +408,7 @@ Allow SSH access through UFW
 Enable firewall
 `ufw enable`
 
->####**See Also:
+>##**See Also:
 [Use Fail2ban to Secure Your Server](https://www.linode.com/docs/security/using-fail2ban-for-security)
 
 ##Launch the app!
@@ -431,7 +434,7 @@ http://34.213.124.212
 
 [SSH Essentials: Working with SSH Servers, Clients, and Keys](https://www.digitalocean.com/community/tutorials/ssh-essentials-working-with-ssh-servers-clients-and-keys)
 
-###Living Resources
+##Living Resources
 Steve Wooding,Trish, and Greg: true assets to Udacity; their commitment to OUR success is amazing.
 
 Thanks to Chris and Josh, my fellow students for not worrying about "competition" and sharing their mistakes and best resources so I could finish in time and to Renee, who had the [most beautiful README file](https://github.com/rtiinuma/udacity_server_config) for this project, and Serenity for her insight, wisdom, and patience.
@@ -446,5 +449,5 @@ Thanks to Chris and Josh, my fellow students for not worrying about "competition
 ----->
 
 
-####Still Here?<br>
-`[Pa/ RA(NO+RM)aIS+UD1ies/Lab]com` [<---- put this code](http://www.paranormalstudieslab.com/#/) in Google for fun.
+##Still Here?<br>
+Have an amazing day!
