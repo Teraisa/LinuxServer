@@ -46,7 +46,7 @@ UNPROTECTED PRIVATE KEY FILE!* change:
 *Then* login:
 `ssh ubuntu@yourIPaddress -i ~/lightsailKey.pem`
 
-- **Optional** Pull up another terminal window and test your command to *double check*:
+**Optional** Pull up another terminal window and test your command to *double check*:
 `ssh ubuntu@yourIPaddress -i ~/lightsailKey.pem`
 
 >**See Also:**
