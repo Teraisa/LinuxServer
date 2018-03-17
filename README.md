@@ -217,7 +217,7 @@ Restart
 `sudo service apache2 start`
 
 Verify Module wsgi is enabled
-`sudo a2enmod wsg`
+`sudo a2enmod wsgi`
 
 Start Apache2
 `sudo service apache2 start`
